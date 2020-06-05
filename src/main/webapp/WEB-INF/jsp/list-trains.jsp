@@ -1,0 +1,45 @@
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>Mkyong Wildfly Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- END META SECTION -->
+    <!--  BEGIN STYLE -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 1px;
+        }
+    </style>
+    <!--  END STYLE -->
+
+</head>
+<body>
+<div>
+        <h2>Search Results</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>rarity level</th>
+                <th>year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="search : ${search}">
+                <td th:text="${search.id}">Text ...</td>
+                <td th:text="${search.name}">Text ...</td>
+                <td th:text="${search.rarityLevel}">Text ...</td>
+                <td th:text="${search.year}">Text...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
