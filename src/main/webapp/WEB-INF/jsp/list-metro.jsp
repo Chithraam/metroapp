@@ -18,7 +18,7 @@
 				<c:forEach items="${trains}" var="train">
 					<tr>
 						<td>${train.routeName}</td>
-						<td>${train.coachNo}</td>
+						<td>${train.coachName}</td>
 						<td>${train.capacity}</td>
 						<td>${train.freeSeats}</td>
 					</tr>

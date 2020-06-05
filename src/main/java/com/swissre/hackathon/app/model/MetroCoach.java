@@ -1,17 +1,33 @@
 package com.swissre.hackathon.app.model;
 
+import javax.persistence.*;
+
+@Table(name = "metrocoach")
+@Entity
 public class MetroCoach {
 
-    private String metroId;
+	@Id
+	@Column(name="COACHID")
     private String coachId;
-    private String coachNo;
+	
+	@Column(name="COACHNAME")
+    private String coachName;
+	
+    @Column(name="METROID")
+    private String metroId;
+    
+    @Column(name="CAPACITY")
     private int capacity;
+    
+    @Column(name="FREESEATS")
     private int freeSeats;
+    
+    public MetroCoach() {};
 
-    public MetroCoach(String metroId, String coachId, String coachNo, int capacity, int freeSeats) {
+    public MetroCoach(String metroId, String coachId, String coachName, int capacity, int freeSeats) {
         this.metroId = metroId;
         this.coachId = coachId;
-        this.coachNo = coachNo;
+        this.coachName = coachName;
         this.capacity = capacity;
         this.freeSeats = freeSeats;
     }
@@ -32,12 +48,12 @@ public class MetroCoach {
         this.coachId = coachId;
     }
 
-    public String getCoachNo() {
-        return coachNo;
+    public String getCoachName() {
+        return coachName;
     }
 
-    public void setCoachNo(String coachNo) {
-        this.coachNo = coachNo;
+    public void setCoachName(String coachName) {
+        this.coachName = coachName;
     }
 
     public int getCapacity() {

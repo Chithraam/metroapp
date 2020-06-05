@@ -1,13 +1,31 @@
 package com.swissre.hackathon.app.model;
 
+import javax.persistence.*;
+
+@Table(name = "metro")
+@Entity
 public class Metro {
 
+	@Id
+	@Column(name="METROID")
     private String metroId;
+	
+	@Column(name="ROUTEID")
     private String routeId;
+	
+	@Column(name="NOOFCOACHES")
     private String noOfCoaches;
+	
+	@Column(name="CROWDEDSTATUS")
     private String crowdedStatus;
+	
+	@Column(name="CURRENTSTATION")
     private String currentStation;
+	
+	@Column(name="NEXTSTATION")
     private String nextStation;
+	
+	public Metro() {};
 
     public Metro(String metroId, String routeId, String noOfCoaches, String crowdedStatus, String currentStation, String nextStation) {
         this.metroId = metroId;

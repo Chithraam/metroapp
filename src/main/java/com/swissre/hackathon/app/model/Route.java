@@ -2,19 +2,38 @@ package com.swissre.hackathon.app.model;
 
 import java.util.List;
 
-public class Route {
-    private String routeId;
-    private String routeName;
-    private String source;
-    private String destination;
-    private List<String> listOfStations;
+import javax.persistence.*;
 
-    public Route(String routeId, String routeName, String source, String destination, List<String> listOfStations) {
+import com.swissre.hackathon.app.util.StringListConverter;
+
+@Table(name = "route")
+@Entity
+public class Route {
+	@Id
+	@Column(name="ROUTEID")
+    private String routeId;
+	
+	@Column(name="ROUTENAME")
+    private String routeName;
+	
+	@Column(name="SOURCE")
+    private String source;
+	
+	@Column(name="DESTINATION")
+    private String destination;
+    
+    @Convert(converter = StringListConverter.class)
+    @Column(name="STATIONS")
+    private List<String> stations;
+    
+    public Route() {};
+
+    public Route(String routeId, String routeName, String source, String destination, List<String> stations) {
         this.routeId = routeId;
         this.routeName = routeName;
         this.source = source;
         this.destination = destination;
-        this.listOfStations = listOfStations;
+        this.stations = stations;
     }
 
     public String getRouteId() {
@@ -49,11 +68,11 @@ public class Route {
         this.destination = destination;
     }
 
-    public List<String> getListOfStations() {
-        return listOfStations;
+    public List<String> getStations() {
+        return stations;
     }
 
-    public void setListOfStations(List<String> listOfStations) {
-        this.listOfStations = listOfStations;
+    public void setStations(List<String> stations) {
+        this.stations = stations;
     }
 }

@@ -4,7 +4,7 @@ public class MetroCoachModel {
     private String routeName;
     private String source;
     private String destination;
-    private String coachNo;
+    private String coachName;
     private int capacity;
     private int freeSeats;
 
@@ -32,12 +32,12 @@ public class MetroCoachModel {
         this.destination = destination;
     }
 
-    public String getCoachNo() {
-        return coachNo;
+    public String getCoachName() {
+        return coachName;
     }
 
-    public void setCoachNo(String coachNo) {
-        this.coachNo = coachNo;
+    public void setCoachName(String coachName) {
+        this.coachName = coachName;
     }
 
     public int getCapacity() {
